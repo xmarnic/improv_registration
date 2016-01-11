@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+{% block body %}
+    <h1>Registerd Guests</h1>
+    <ul class="list-group">
+        {% for guest in guests %}
+            <li class="list-group-item">{{ guest.first_name }} {{ guest.last_name }}: {{guest.email_address }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
