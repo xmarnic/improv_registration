@@ -1,7 +1,4 @@
 # This file contains most of the configuration variables
 DEBUG=True
-
-DATABASE='/home/nick/projects/improv_registration/guests.db'
-SECRET_KEY='development_key'
-USERNAME = 'admin'
-PASSWORD = 'default'
+SECRET_KEY = 'PISS'
+SQLALCHEMY_DATABASE_URI="postgresql://nick:zeeP7aicoopa@localhost/improv_reg"
