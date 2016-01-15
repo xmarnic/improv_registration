@@ -42,7 +42,7 @@ def register():
     error = None
     if request.method == 'POST':
         first_name, last_name, email_address = request.form.values()
-        sql_statement = "INSERT INTO guests (guest_id, first_name, last_name, email_address) VALUES (DEFAULT, %s, %s, %s)"
+        sql_statement = "INSERT INTO guests (first_name, last_name, email_address) VALUES (%s, %s, %s)"
         cur = g.db.cursor()
         cur.execute(sql_statement, (first_name, last_name, email_address))
         g.db.commit()
@@ -53,8 +53,8 @@ def register():
 @app.route('/guests')
 def show_guests():
     cur = g.db.cursor()
-    cur.execute("SELECT * FROM guests;")
-    guests = [dict(first_name=row[1], last_name=row[2], email_address=row[3]) for row in cur.fetchall()]
+    cur.execute("SELECT * FROM guests")
+    guests = [dict(first_name=row[0], last_name=row[1], email_address=row[2]) for row in cur.fetchall()]
     cur.close()
     return render_template('show_guests.html', guests=guests)
 
