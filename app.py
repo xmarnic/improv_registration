@@ -53,7 +53,7 @@ def register():
 @app.route('/guests')
 def show_guests():
     cur = g.db.cursor()
-    cur.execute("SELECT * FROM guests")
+    cur.execute("SELECT first_name, last_name, email_address FROM guests")
     guests = [dict(first_name=row[0], last_name=row[1], email_address=row[2]) for row in cur.fetchall()]
     cur.close()
     return render_template('show_guests.html', guests=guests)
