@@ -1,4 +1,6 @@
 # This file contains most of the configuration variables
+import os
+
 DEBUG=True
-SECRET_KEY = 'PISS'
-SQLALCHEMY_DATABASE_URI="postgresql://nick:zeeP7aicoopa@localhost/improv_reg"
+SECRET_KEY ='PISS'
+DATABASE_URL=os.environ.get('DATABASE_URL')
