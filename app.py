@@ -41,7 +41,9 @@ def teardown_request(exception):
 def register():
     error = None
     if request.method == 'POST':
-        first_name, last_name, email_address = request.form.values()
+        first_name = request.form['first_name']
+        last_name = request.form['last_name']
+        email_address = request.form['email_address']
         sql_statement = "INSERT INTO guests (first_name, last_name, email_address) VALUES (%s, %s, %s)"
         cur = g.db.cursor()
         cur.execute(sql_statement, (first_name, last_name, email_address))
