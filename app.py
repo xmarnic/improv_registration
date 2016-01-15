@@ -1,6 +1,9 @@
 from __future__ import print_function
 from flask import Flask, flash, g, render_template, request, url_for
+import os
 import psycopg2
+import urlparse
+
 
 # Application SetUP\p
 app = Flask(__name__)
@@ -8,7 +11,17 @@ app.config.from_pyfile('config.py')
 
 # DATABASE
 def connect_db():
-    return psycopg2.connect(database="improv_reg", user="nick", password="zeP7aicoopa", host="127.0.0.1")
+    urlparse.uses_netloc.append("postgres")
+    url = urlparse.urlparse(os.environ["DATABASE_URL"])
+    conn = psycopg2.connect(
+            database=url.path[1:],
+            user=url.username,
+            password=url.password,
+            host=url.hostname,
+            port=url.port
+    )
+    return conn
+
 
 # Connect to db before each request
 @app.before_request
