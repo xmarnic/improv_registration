@@ -1,19 +1,64 @@
 <!DOCTYPE html>
-<html>
+<htmli lang="en">
     <head>
         <title>Improv Night</title>
+        <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="{{ url_for('static', filename='bootstrap.min.css') }}"
-              rel="stylesheet" media="screen">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" media="screen">
+        <link rel="stylesheet" href="{{ url_for('static', filename='custom.css') }}">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js"></script>
     </head>
     <body>
+        {% for message in get_flashed_messages() %}
+        <div class="alert alert-success" role="alert">
+            {{ message }}
+        </div>
+        {% endfor %}
+
+        <!-- Jumbotron -->
+        <div class="container-fluid">
+            <div class="jumbotron">
+                <div class="container">
+                    <h1 class="text-sm-center">An Afternoon of Improv</h1>
+                    <h2 class="text-sm-center"><small>Event Registration</small></h2>
+                </div>    
+            </div>
+        </div>
+
+        {% block body %}{% endblock %}
+
+        <!-- footer -->
         <div class="container">
-            {% for message in get_flashed_messages() %}
-                <div class="alert alert-success" role="alert">
-                    {{ message }}
+            <div class="row">
+                <div class="col-sm-12">
+                    <h3>Event Contact Information</h3>
                 </div>
-            {% endfor %}
-            {% block body %}{% endblock %}
+            </div>
+            <div class="row">
+                <div class="col-sm-5">
+                    <div class="card">
+                        <img class="card-img-top center-block" data-src"..." src="{{ url_for('static', filename='j_pasqua.jpg') }}" alt=""
+                        style="height: 180px; width=100%; display: block;">
+                        <div class="card-block">
+                            <h4 class="card-title text-sm-center">Jason Pasqua</h4>
+                            <h6 class="card-subtitle text-muted text-sm-center">Theatre Instructor</h6>
+                            <p class="text-sm-center"><a class="card-link" href="mailto:jpasqua@lccc.wy.edu">jpasqua@lccc.wy.edu</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-5 col-sm-offset-2">
+                    <div class="card">
+                        <img class="card-img-top center-block" data-src"..." src="{{ url_for('static', filename='bill.jpg') }}" alt=""
+                        style="height: 180px; width=100%; display: block;">
+                        <div class="card-block">
+                            <h4 class="card-title text-sm-center">Nicholas Marlin</h4>
+                            <h6 class="card-subtitle text-muted text-sm-center">Admissions Representative</h6>
+                            <p class="text-sm-center"><a class="card-link" href="mailto:nmarlin@lccc.wy.edu">nmarlin@lccc.wy.edu</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </body>
 </html>
