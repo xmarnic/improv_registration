@@ -52,7 +52,10 @@ def register():
     if form.validate_on_submit():
         sql_statement = "INSERT INTO guests (first_name, last_name, email_address, public) VALUES (%s, %s, %s, %s)"
         cur = g.db.cursor()
-        cur.execute(sql_statement, (form.first_name.data, form.last_name.data, form.email.data, form.public.data))
+        cur.execute(sql_statement, (form.first_name.data.capitalize(),
+            form.last_name.data.capitalize(), form.email.data.lower(),
+            form.public.data)
+        )
         g.db.commit()
         return redirect(url_for('show_guests'))
     return render_template('reg_form.html', form=form)
