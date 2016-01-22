@@ -3,6 +3,19 @@
     color: #fff;
 }
 
-.contact_info {
-    margin-top: 15px;
+.host_tron {
+    margin-bottom: 0;
+}
+.host_cards {
+    background-color: #424242;
+}
+
+.person_card {
+    padding-top: 7.5%;
+}
+
+.card-img-top {
+    max-height: 295px;
+    width: 100%;
+    display: block;
 }

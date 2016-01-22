@@ -18,45 +18,56 @@
         <div class="container-fluid">
             <div class="jumbotron">
                 <div class="container">
-                    <h1 class="text-sm-center">An Afternoon of Improv</h1>
-                    <h2 class="text-sm-center"><small>{{ subtitle }}</small></h2>
+                    <h2 class="text-sm-left"><em><small>Join us for<small></em></h2>
+                    <h1 class="text-sm-center">An Afternoon of Improv!</h1>
+                    <h5 class="text-sm-right">Friday, March 4, 2016</h5>
                 </div>    
             </div>
         </div>
 
         {% block body %}{% endblock %}
 
-        <!-- footer -->
+        <!-- Meet Hosts -->
         <div class="container-fluid">
-            <div class="row">
-                <div class="col-sm-12 contact_info">
-                    <h4>Event Contact Information</h4>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-6">
-                    <div class="card">
-                        <img class="card-img-top center-block" data-src"..." src="{{ url_for('static', filename='j_pasqua.jpg') }}" alt=""
-                        style="height: 100%; width:100%; display: block;">
-                        <div class="card-block">
-                            <h4 class="card-title text-sm-center">Jason Pasqua</h4>
-                            <h6 class="card-subtitle text-muted text-sm-center">Theatre Instructor</h6>
-                            <p class="text-sm-center"><a class="card-link" href="mailto:jpasqua@lccc.wy.edu">jpasqua@lccc.wy.edu</a></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="card">
-                        <img class="card-img-top center-block" data-src"..." src="{{ url_for('static', filename='bill.jpg') }}" alt=""
-                        style="height: 100%; width: 100%; display: block;">
-                        <div class="card-block">
-                            <h4 class="card-title text-sm-center">Nicholas Marlin</h4>
-                            <h6 class="card-subtitle text-muted text-sm-center">Admissions Representative</h6>
-                            <p class="text-sm-center"><a class="card-link" href="mailto:nmarlin@lccc.wy.edu">nmarlin@lccc.wy.edu</a></p>
+            <div class="jumbotron host_tron">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h4 class="text-sm-left"><em><small>Meet your<small></em></h4>
+                            <h3 class="text-sm-center">Laramie County Community College</h3>
+                            <h5 class="text-sm-right">Event hosts</h5>
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="host_cards">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-6 person_card">
+                            <div class="card">
+                                <img class="card-img-top center-block" data-src"..." src="{{ url_for('static', filename='j_pasqua.jpg') }}" alt="Jason Pasqua, Theatre Instructor">
+                                <div class="card-block">
+                                    <h4 class="card-title text-sm-center">Jason Pasqua</h4>
+                                    <h6 class="card-subtitle text-muted text-sm-center">Theatre Instructor</h6>
+                                    <p class="text-sm-center"><a class="card-link" href="mailto:jpasqua@lccc.wy.edu">jpasqua@lccc.wy.edu</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 person_card">
+                            <div class="card">
+                                <img class="card-img-top center-block" data-src"..." src="{{ url_for('static', filename='bill.jpg') }}" alt="Nicholas Marlin, Admissions Representative">
+                                <div class="card-block">
+                                    <h4 class="card-title text-sm-center">Nicholas Marlin</h4>
+                                    <h6 class="card-subtitle text-muted text-sm-center">Admissions Representative</h6>
+                                    <p class="text-sm-center"><a class="card-link" href="mailto:nmarlin@lccc.wy.edu">nmarlin@lccc.wy.edu</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
         </div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js"></script>
