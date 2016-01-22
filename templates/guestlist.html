@@ -4,6 +4,7 @@
     <div class="row">
         <div class="col-sm-12">
             <ul class="list-group">
+                <li class="list-group-item guestlist_header"><strong>Registered Guests</strong></li>
                 {% for guest in guests %}
                     <li class="list-group-item">{{ guest.first_name }} {{ guest.last_name }}</li>
                 {% endfor %}

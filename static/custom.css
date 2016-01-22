@@ -1,10 +1,11 @@
 .jumbotron {
     background-color: #076bb6;
     color: #fff;
+    margin-bottom: 0;
 }
 
-.host_tron {
-    margin-bottom: 0;
+.ul {
+    margin-top:0;
 }
 .host_cards {
     background-color: #424242;
