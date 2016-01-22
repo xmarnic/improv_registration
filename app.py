@@ -45,6 +45,7 @@ class RegForm(Form):
     email = StringField('Email Address', validators=[Required(), Email()])
     public = BooleanField('Public')
 
+
 # VIEWS
 @app.route('/', methods=['GET', 'POST'])
 def register():
@@ -58,15 +59,15 @@ def register():
         )
         g.db.commit()
         return redirect(url_for('show_guests'))
-    return render_template('reg_form.html', form=form)
+    return render_template('reg_form.html', form=form, subtitle="Event Registration")
 
-@app.route('/guests')
+@app.route('/guestlist')
 def show_guests():
     cur = g.db.cursor()
     cur.execute("SELECT first_name, last_name FROM guests WHERE public")
     guests = [dict(first_name=row[0], last_name=row[1]) for row in cur.fetchall()]
     cur.close()
-    return render_template('show_guests.html', guests=guests)
+    return render_template('guestlist.html', guests=guests, subtitle="Guest List")
 
 
 # Fire up server if file ran as standalone application.
