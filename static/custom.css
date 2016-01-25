@@ -1,22 +1,50 @@
-.jumbotron {
-    background-color: #076bb6;
-    color: #fff;
-    margin-bottom: 0;
+.jumbotron h1 {
+    font-size: 1.55em;
 }
 
-.ul {
-    margin-top:0;
-}
-.host_cards {
-    background-color: #424242;
+.jumbotron em {
+    display: block;
+    padding-bottom: .5em;
 }
 
-.person_card {
-    padding-top: 7.5%;
+.jumbotron span {
+    font-weight: bold;
+}
+
+.guestlist-btn {
+    display: block;
+    margin-top: 1em;
+    max-width: 250px;
+}
+
+.contact {
+    background-color: #ECEEEF;
+}
+
+.contact h2 {
+    padding-top: 0.5em ;
+    padding-bottom: 0.25em;
+}
+
+.card {
+    margin-top: .75em;
+    margin-bottom: 1.75em;
 }
 
 .card-img-top {
     max-height: 295px;
     width: 100%;
     display: block;
+}
+
+.card-block {
+    text-align: center;
+}
+
+.card-block h4 {
+    font-size: 1em;
+}
+
+.main {
+    max-width: 768px;
 }
