@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<htmli lang="en">
+<html lang="en">
     <head>
         <title>An Afternoon of Improv presented by Laramie County Community College</title>
         <meta charset="utf-8">
@@ -8,68 +8,74 @@
         <link rel="stylesheet" href="{{ url_for('static', filename='custom.css') }}">
     </head>
     <body>
-        {% for message in get_flashed_messages() %}
-        <div class="alert alert-success" role="alert">
-            {{ message }}
-        </div>
-        {% endfor %}
+        <div class="container-fluid main">
+            <!-- Alerts -->
+            <div class="row">
+                <div class="col-sm-12">
+                    {% for message in get_flashed_messages() %}
+                    <div class="{{ alert_class|safe }}" role="alert">
+                        {{ message }}
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
 
-        <!-- Jumbotron -->
-        <div class="container-fluid">
+            <!-- Jumbotron -->
             <div class="jumbotron">
                 <div class="container">
-                    <h2 class="text-sm-left"><em><small>Join us for<small></em></h2>
-                    <h1 class="text-sm-center">An Afternoon of Improv!</h1>
-                    <h5 class="text-sm-right">Friday, March 4, 2016</h5>
-                </div>    
-            </div>
-        </div>
-
-        {% block body %}{% endblock %}
-
-        <!-- Meet Hosts -->
-        <div class="container-fluid">
-            <div class="jumbotron host_tron">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <h4 class="text-sm-left"><em><small>Meet your<small></em></h4>
-                            <h3 class="text-sm-center">Laramie County Community College</h3>
-                            <h5 class="text-sm-right">Event hosts</h5>
-                        </div>
-                    </div>
+                    <h1><em>Join us for</em><span>An Afternoon of Improv!</span></h1>    
+                    <p>
+                        <time datetime="2016-03-04">Friday, March 4, 2016 at 2:00pm,</time>
+                        in the <a href="http://lccc.wy.edu">Laramie County Community College</a> Playhouse.
+                        <a class="btn btn-primary btn-lg guestlist-btn " href="{{ url_for('show_guests') }}"
+                         {{ hidden|safe }}>View Guestlist</a>
+                    </p>
                 </div>
             </div>
-            <div class="host_cards">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-6 person_card">
-                            <div class="card">
-                                <img class="card-img-top center-block" data-src"..." src="{{ url_for('static', filename='j_pasqua.jpg') }}" alt="Jason Pasqua, Theatre Instructor">
-                                <div class="card-block">
-                                    <h4 class="card-title text-sm-center">Jason Pasqua</h4>
-                                    <h6 class="card-subtitle text-muted text-sm-center">Theatre Instructor</h6>
-                                    <p class="text-sm-center"><a class="card-link" href="mailto:jpasqua@lccc.wy.edu">jpasqua@lccc.wy.edu</a></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 person_card">
-                            <div class="card">
-                                <img class="card-img-top center-block" data-src"..." src="{{ url_for('static', filename='bill.jpg') }}" alt="Nicholas Marlin, Admissions Representative">
-                                <div class="card-block">
-                                    <h4 class="card-title text-sm-center">Nicholas Marlin</h4>
-                                    <h6 class="card-subtitle text-muted text-sm-center">Admissions Representative</h6>
-                                    <p class="text-sm-center"><a class="card-link" href="mailto:nmarlin@lccc.wy.edu">nmarlin@lccc.wy.edu</a></p>
-                                </div>
+
+            <!-- Dynamic Content -->
+            {% block body %}{% endblock %}
+
+            <!-- Contact Section -->
+            <div class="container-fluid contact">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h2>Meet your event hosts</h2>
+                    </div>
+                </div>
+                <!-- Contact Cards -->
+                <div class="row">
+                    <!-- Jasons Card -->
+                    <div class="col-sm-6 col-md-6">
+                        <div class="card">
+                            <img class="card-img-top"
+                                 src="{{ url_for('static', filename='j_pasqua.jpg') }}"
+                                 alt="Jason Pasqua, Theatre Instructor">
+                            <div class="card-block">
+                                <h3>Jason Pasqua</h3>
+                                 <h4 class="card-subtitle text-muted">Theatre Instructor</h4>
+                                 <a class="card-link" href="mailto:jpasqua@lccc.wy.edu">jpasqua@lccc.wy.edu</a>
                             </div>
                         </div>
                     </div>
+
+                    <!-- Nicks Card -->
+                    <div class="col-sm-6 col-md-6">
+                        <div class="card">
+                            <img class="card-img-top"
+                                 src="{{ url_for('static', filename='bill.jpg') }}"
+                                 alt="Nick Marlin, Admissions Representative">
+                            <div class="card-block">
+                                <h3>Nick Marlin</h3>
+                                 <h4 class="card-subtitle text-muted">Admissions Representative</h4>
+                                 <a class="card-link" href="mailto:jpasqua@lccc.wy.edu">nmarlin@lccc.wy.edu</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
+                <!-- End Contact Section -->
             </div>
+                
         </div>
-        <div class="container">
-        </div>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js"></script>
-    </body>
-</html>
+    </body
