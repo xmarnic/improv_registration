@@ -1,14 +1,29 @@
 {% extends "layout.html" %}
 {% block body %}
-<div class="container-fluid">
+<div class="container">
     <div class="row">
         <div class="col-sm-12">
-            <ul class="list-group">
-                <li class="list-group-item guestlist_header"><strong>Registered Guests</strong></li>
-                {% for guest in guests %}
-                    <li class="list-group-item">{{ guest.first_name }} {{ guest.last_name }}</li>
-                {% endfor %}
-            </ul>
+            <h2>Registered Guests</h2>
+        </div>
+        <div class="col-sm-12">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>City</th>
+                    <tr>
+                </thead>
+                <tbody>
+                    {% for guest in guests %}
+                    <tr>
+                        <td>{{ guest.first_name }}</td>
+                        <td>{{ guest.last_name }}</td>
+                        <td>{{ guest.city }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
         </div>        
     </div>
 </div>
