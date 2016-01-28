@@ -48,7 +48,11 @@ class RegForm(Form):
 
 
 # VIEWS
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/')
+def root_red():
+    return redirect(url_for('register'))
+
+@app.route('/theatre', methods=['GET', 'POST'])
 def register():
     alert_class = None
     form = RegForm()
@@ -68,7 +72,7 @@ def register():
         flash('Please complete the registration form.')
     return render_template('reg_form.html', form=form, alert_class=alert_class, hidden=None)
 
-@app.route('/guestlist')
+@app.route('/theatre/guestlist')
 def show_guests():
     cur = g.db.cursor()
     cur.execute("SELECT first_name, last_name, city FROM guests WHERE public")
