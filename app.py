@@ -12,6 +12,16 @@ import urlparse
 app = Flask(__name__)
 app.config.from_pyfile('config.py')
 
+
+# Forms
+class RegForm(Form):
+    first_name = StringField('First Name', validators=[Required()])
+    last_name = StringField('Last Name', validators=[Required()])
+    email = StringField('Email Address', validators=[Required(), Email()])
+    city = StringField('City', validators=[Required()])
+    public = BooleanField('Public')
+
+
 # DATABASE
 def connect_db():
     urlparse.uses_netloc.append("postgres")
@@ -38,18 +48,9 @@ def teardown_request(exception):
         db.close()
 
 
-# Forms
-class RegForm(Form):
-    first_name = StringField('First Name', validators=[Required()])
-    last_name = StringField('Last Name', validators=[Required()])
-    email = StringField('Email Address', validators=[Required(), Email()])
-    city = StringField('City', validators=[Required()])
-    public = BooleanField('Public')
-
-
 # VIEWS
 @app.route('/')
-def root_red():
+def root_redirect():
     return redirect(url_for('register'))
 
 @app.route('/theatre', methods=['GET', 'POST'])
