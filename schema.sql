@@ -1,7 +1,8 @@
 drop table if exists guests;
 create table guests (
-    id integer primary key autoincrement,
-    first_name text not null,
-    last_name text not null,
-    email_address text not null
+    first_name varchar(50),
+    last_name varchar(50),
+    email_address varchar(50),
+    city varchar(50),
+    public boolean
 );
