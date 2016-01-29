@@ -51,6 +51,7 @@ def teardown_request(exception):
 # VIEWS
 @app.route('/')
 def root_redirect():
+    """Quick hack, will register a blueprint before production deploy :("""
     return redirect(url_for('register'))
 
 @app.route('/theatre', methods=['GET', 'POST'])
@@ -65,6 +66,7 @@ def register():
             form.city.data.capitalize(), form.public.data)
         )
         g.db.commit()
+        cur.close()
         alert_class = 'alert-success'
         flash('You have successfully registered.')
         return redirect(url_for('show_guests'))
