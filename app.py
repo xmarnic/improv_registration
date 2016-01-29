@@ -47,7 +47,6 @@ def teardown_request(exception):
     if db is not None:
         db.close()
 
-
 # VIEWS
 @app.route('/')
 def root_redirect():
@@ -59,11 +58,15 @@ def register():
     alert_class = None
     form = RegForm()
     if form.validate_on_submit():
-        sql_statement = "INSERT INTO guests (first_name, last_name, email_address, city, public) VALUES (%s, %s, %s, %s, %s)"
         cur = g.db.cursor()
-        cur.execute(sql_statement, (form.first_name.data.capitalize(),
-            form.last_name.data.capitalize(), form.email.data.lower(),
-            form.city.data.capitalize(), form.public.data)
+        sql_statement = "INSERT INTO guests (first_name, last_name, email_address, city, public) VALUES (%s, %s, %s, %s, %s)"
+        cur.execute(
+                sql_statement,
+                (form.first_name.data.capitalize(),
+                    form.last_name.data.capitalize(),
+                    form.email.data.lower(),
+                    form.city.data.capitalize(), form.public.data
+                )
         )
         g.db.commit()
         cur.close()
