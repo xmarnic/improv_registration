@@ -22,77 +22,76 @@
                 </div>
             </div>
 			
-			<!-- Logo and Title Container -->
-			<div class="logo-panel col-lg-8 col-sm-12">
-				<h1>
-					<img class="center-block" src="{{ url_for('static', filename='improv_logo.png') }}" alt="Join us for an afternoon of improv" />
-				</h1>
-				<img class="lccc-logo center-block" src="{{ url_for('static', filename='lccc_logo.png') }}" alt="Laramie County Community College Logo" />
-			</div>
+		<!-- Logo and Title Container -->
+		<div class="logo-panel col-lg-8 col-sm-12">
+			<h1>
+				<img class="center-block" src="{{ url_for('static', filename='improv_logo.png') }}" alt="Join us for an afternoon of improv" />
+			</h1>
+			<img class="lccc-logo center-block" src="{{ url_for('static', filename='lccc_logo.png') }}" alt="Laramie County Community College Logo" />
+		</div>
 			
-			<div class="col-lg-4 col-sm-12 col-lg-push-7 content-panel">
+		<div class="col-lg-4 col-sm-12 col-lg-push-7 content-panel">
 
-				<!-- Event Content -->
-				<div class="container-fluid">
-					<h2>
-						<time datetime="2016-03-04">Friday, March 4, 2016 at 2:00pm,</time>
-					</h2>
-					<p>
-						in the <a href="http://lccc.wy.edu">Laramie County Community College</a> Playhouse.<br />
-						<a class="btn btn-primary btn-lg btn-ghost " href="{{ url_for('show_guests') }}"
-						 {{ hidden|safe }}>View Guestlist</a>
-					</p>
-				</div>
+			<!-- Event Content -->
+			<div class="container-fluid">
+				<h2>
+					<time datetime="2016-03-04">Friday, March 4, 2016 at 2:00pm,</time>
+				</h2>
+				<p>
+					in the <a href="http://lccc.wy.edu">Laramie County Community College</a> Playhouse.<br />
+					<a class="btn btn-primary btn-lg btn-ghost " href="{{ url_for('show_guests') }}"
+					 {{ hidden|safe }}>View Guestlist</a>
+				</p>
+			</div>
 	
-				<!-- Dynamic Content -->
-				{% block body %}{% endblock %}
+			<!-- Dynamic Content -->
+			{% block body %}{% endblock %}
 
-	
-				<!-- Contact Section -->
-				<div class="container-fluid contact">
-					<div class="row">
-						<div class="col-sm-12">
-							<h2>Meet your event hosts</h2>
-						</div>
+			<!-- Contact Section -->
+			<div class="container-fluid contact">
+				<div class="row">
+					<div class="col-sm-12">
+						<h2>Meet your event hosts</h2>
 					</div>
+				</div>
 					
-					<!-- Contact Cards -->
-					<div class="row">
-						<!-- Jasons Card -->
-						<div class="col-lg-6 col-sm-12 card-container">
-							<div class="card">
-								<div class="card-image">
-									<img class="card-img-top"
-										 src="{{ url_for('static', filename='j_pasqua.jpg') }}"
-										 alt="Jason Pasqua, Theatre Instructor" />
-								</div>
-								<div class="card-block">
-									<h3>Jason Pasqua</h3>
-									 <h4 class="card-subtitle text-muted">Theatre Instructor</h4>
-									 <a class="card-link" href="mailto:jpasqua@lccc.wy.edu">jpasqua@lccc.wy.edu</a>
-								</div>
+				<!-- Contact Cards -->
+				<div class="row">
+					<!-- Jasons Card -->
+					<div class="col-lg-6 col-sm-12 card-container">
+						<div class="card">
+							<div class="card-image">
+								<img class="card-img-top"
+									 src="{{ url_for('static', filename='j_pasqua.jpg') }}"
+									 alt="Jason Pasqua, Theatre Instructor" />
 							</div>
-						</div>
-	
-						<!-- Nicks Card -->
-						<div class="col-lg-6 col-sm-12 card-container">
-							<div class="card">
-								<div class="card-image">
-									<img class="card-img-top"
-										 src="{{ url_for('static', filename='bill.jpg') }}"
-										 alt="Nick Marlin, Admissions Representative" />
-								</div>
-								<div class="card-block">
-									<h3>Nick Marlin</h3>
-									 <h4 class="card-subtitle text-muted">Admissions Representative</h4>
-									 <a class="card-link" href="mailto:jpasqua@lccc.wy.edu">nmarlin@lccc.wy.edu</a>
-								</div>
+							<div class="card-block">
+								<h3>Jason Pasqua</h3>
+								 <h4 class="card-subtitle text-muted">Theatre Instructor</h4>
+								 <a class="card-link" href="mailto:jpasqua@lccc.wy.edu">jpasqua@lccc.wy.edu</a>
 							</div>
 						</div>
 					</div>
-					<!-- End Contact Section -->
+	
+					<!-- Nicks Card -->
+					<div class="col-lg-6 col-sm-12 card-container">
+						<div class="card">
+							<div class="card-image">
+								<img class="card-img-top"
+									 src="{{ url_for('static', filename='bill.jpg') }}"
+									 alt="Nick Marlin, Admissions Representative" />
+							</div>
+							<div class="card-block">
+								<h3>Nick Marlin</h3>
+								 <h4 class="card-subtitle text-muted">Admissions Representative</h4>
+								 <a class="card-link" href="mailto:jpasqua@lccc.wy.edu">nmarlin@lccc.wy.edu</a>
+							</div>
+						</div>
+					</div>
 				</div>
-            </div>
-        </div>
-    </body>
+				<!-- End Contact Section -->
+			</div>
+           </div>
+       </div>
+   </body>
 </html>
