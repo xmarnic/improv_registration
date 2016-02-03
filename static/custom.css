@@ -118,7 +118,7 @@ h3{
 	-webkit-transition:all ease-in-out 0.25s;
 	transition:all ease-in-out 0.25s;
 }
-input.active + .control-label{
+input:focus + .control-label, input.active + .control-label{
 	top:-0.65rem;
 	opacity:0.40;
 	font-size:0.8rem;
