@@ -1,50 +1,151 @@
-.jumbotron h1 {
-    font-size: 1.55em;
+/* Base Styles */
+img{
+	max-width:100%;
+}
+a{
+	color:#fff;
+	font-weight:bold;
+	text-decoration:underline;
+}
+a:hover, a:focus{
+	color:#076bb6;
+	text-decoration:none;
+}
+h3{
+	font-size:1.65rem;
 }
 
-.jumbotron em {
-    display: block;
-    padding-bottom: .5em;
+/* Layout */
+.main{
+	top:0;
+	left:0;
+	width:100%;
+	padding:0;
+	overflow:hidden;
+	
+	background:50% 50% no-repeat;
+	background-size:cover;
+	background-position:50% 50%;
+	background-attachment:fixed;
+}
+.alert-container{
+	position:fixed;
+	bottom:0;
+	left:0;
+	right:0;
+	text-align:center;
+	z-index:1;
+}
+.alert-success, .alert-danger{
+	padding:10px;
+	opacity:0.9;
+}
+.logo-panel{
+	position:fixed;
+	margin-bottom:20px;
+}
+.lccc-logo{
+	display:block;
+	max-width:250px;
+	margin-left:auto;
+	margin-right:auto;
+}
+.content-panel{
+	min-height:100vh;
+	padding:20px 15px 40px 15px;
+	color:#fff;
+	background:rgba(0,0,0,0.65);
 }
 
-.jumbotron span {
-    font-weight: bold;
+/* Ghost Buttons */
+.btn-ghost{
+	margin: 20px 0 20px 0;
+	border:1px #fff solid;
+	text-decoration:none;
+	
+	background:none;
+	
+	-o-transition:all ease-in-out 0.25s;
+	-ms-transition:all ease-in-out 0.25s;
+	-moz-transition:all ease-in-out 0.25s;
+	-webkit-transition:all ease-in-out 0.25s;
+	transition:all ease-in-out 0.25s;
+}
+.btn-ghost:hover{
+	border:1px #fff solid;
+	background:#076bb6;
 }
 
-.guestlist-btn {
-    display: block;
-    margin-top: 1em;
-    max-width: 250px;
+/* Card */
+.card-image{
+	max-height:300px;
+	overflow:hidden;
+}
+.card-img-top{
+	width:100%;
+}
+.card{
+	color:#4d4d4d;
+	text-align:center;
+}
+.card a{
+	color:#076bb6;
+}
+.card-subtitle{
+	font-size:1rem;
 }
 
-.contact {
-    background-color: #ECEEEF;
+/* Form */
+.form-group{
+	position: relative;
+}
+.form-control{
+	margin-top:10px;
+	color:#F9F9F9;
+	border:none;
+	border-bottom:#fff solid 2px;
+	border-radius:0;
+	background:none;
+}
+.control-label{
+	position:absolute;
+	top:0.3rem;
+	left:0.80rem;
+	
+	-o-transition:all ease-in-out 0.25s;
+	-ms-transition:all ease-in-out 0.25s;
+	-moz-transition:all ease-in-out 0.25s;
+	-webkit-transition:all ease-in-out 0.25s;
+	transition:all ease-in-out 0.25s;
+}
+input.active + .control-label{
+	top:-0.65rem;
+	opacity:0.40;
+	font-size:0.8rem;
 }
 
-.contact h2 {
-    padding-top: 0.5em ;
-    padding-bottom: 0.25em;
+/* Responsive CSS */
+@media(max-width:1455px){
+	.card-image{
+		height:auto;
+		max-height:none;
+	}
 }
-
-.card {
-    margin-top: .75em;
-    margin-bottom: 1.75em;
+@media(min-width:992px) and (max-width:1455px){
+	.card-container{
+		width:85%;
+	}
 }
-
-.card-img-top {
-    max-height: 295px;
-    width: 100%;
-    display: block;
+@media(min-width:768px) and (max-width:990px){
+	.card-container{
+		width:50%;
+	}
 }
-
-.card-block {
-    text-align: center;
-}
-
-.card-block h4 {
-    font-size: 1em;
-}
-
-.main {
-    max-width: 768px;
+@media(min-width:1px) and (max-width:991px){
+	.logo-panel{
+		position:initial;
+	}
+	.lccc-logo{
+		max-width:200px;
+	}
 }
